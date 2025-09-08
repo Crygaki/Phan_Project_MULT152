@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1304120563257832540}
   - component: {fileID: 8509267140140668564}
   - component: {fileID: 1867455281289592538}
+  - component: {fileID: 8702621589538306869}
   m_Layer: 0
   m_Name: E_Capsule
   m_TagString: Untagged
@@ -113,3 +114,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8702621589538306869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7716622750124679552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a2f7aa8e39daf949a46a5e09ce3ce80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyFollowsPlayer
+  player: {fileID: 0}
+  speed: 3
+  followRange: 10
