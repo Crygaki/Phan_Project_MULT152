@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 384030454359922571}
   - component: {fileID: 782115125011026706}
   - component: {fileID: 5764754159645319833}
+  - component: {fileID: -2334030524314650304}
   m_Layer: 0
   m_Name: E_Cylinder
   m_TagString: Untagged
@@ -113,3 +114,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &-2334030524314650304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875037665705520854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a2f7aa8e39daf949a46a5e09ce3ce80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyFollowsPlayer
+  player: {fileID: 0}
+  speed: 3
+  followRange: 10
