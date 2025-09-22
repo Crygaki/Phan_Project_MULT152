@@ -3,7 +3,7 @@ using UnityEngine;
 public class HealthFeedback : MonoBehaviour
 {
     [SerializeField] private HealthComponent target;
-    [SerializeField] private AudioSource hitSfx;
+    [SerializeField] public AudioSource hitSfx;
     [SerializeField] private GameObject deathFx;
 
     private void OnEnable()
@@ -20,6 +20,7 @@ public class HealthFeedback : MonoBehaviour
         target.OnDied -= HandleDied;
     }
 
+
     private void HandleDamaged(int amt)
     {
         if (hitSfx != null) hitSfx.Play();
@@ -31,7 +32,7 @@ public class HealthFeedback : MonoBehaviour
         if (deathFx != null) Instantiate(deathFx, target.transform.position, Quaternion.identity);
         // Disable controls/renderer, etc.
 
-                 Debug.Log(gameObject.name + " has DIED!");
+                 Debug.Log(gameObject.name + "has DIED!");
                  Destroy(gameObject);
     }
 }
