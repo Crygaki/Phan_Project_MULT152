@@ -3,25 +3,18 @@ using UnityEngine.InputSystem;
 
 public class InputBridge : MonoBehaviour
 {
-    [Header("Jump")]
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private float jumpHeight = 8f;
-    [SerializeField] private float gravity = -20f;
-
-    private CharacterController controller;
-    private Vector3 velocity;
-
-    private void Start()
-    {
-        controller = GetComponent<CharacterController>();
-    }
-
     // Cached values your controller will read in Update()
     public Vector2 Move { get; private set; }
     public Vector2 Look { get; private set; }
     public bool sprintHeld { get; private set; }
     //public bool CrouchPressed { get; private set; } // edge-triggered this frame
     public bool crouchHeld { get; private set; }
+
+    public bool jumpPressed { get; private set; }
+
+    public bool firePressed { get; private set; }
+
+    public bool reloadPressed { get; private set; }
 
     // Optional sensitivity (for Look scaling)
     [Header("Look Tuning")]
@@ -50,29 +43,31 @@ public class InputBridge : MonoBehaviour
     {
         // Edge trigger: fire only on performed
         if (ctx.performed) { crouchHeld = true; } // pressed this frame
-    if (ctx.canceled)  { crouchHeld = false; }
+        if (ctx.canceled) { crouchHeld = false; }
     }
 
-    /*void LateUpdate()
+    public void OnJump(InputAction.CallbackContext ctx)
     {
-        // Reset edge-trigger flags after consumers had a chance to read them
-        CrouchPressed = false;
-    }*/
-
-    //Setup jump method
-    public void OnJump(InputAction.CallbackContext context)
-    {
-        Debug.Log($"Jumping {context.performed} - Is Grounded: {controller.isGrounded}");
-        if (context.performed && controller.isGrounded)
-        {
-            Debug.Log("Jumping!");
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
+        // Fire on press only
+        if (ctx.started) jumpPressed = true;
     }
 
-    private void Update()
+    public void OnFire(InputAction.CallbackContext ctx)
     {
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
+        if (ctx.started) firePressed = true;
+    }
+
+    public void OnReload(InputAction.CallbackContext ctx)
+    {
+        if (ctx.started) reloadPressed = true;
+    }
+
+
+    void LateUpdate()
+    {
+        // auto-clear so it's edge-triggered
+        jumpPressed = false;
+        firePressed = false;
+        reloadPressed = false;
     }
 }

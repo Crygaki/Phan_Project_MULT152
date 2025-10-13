@@ -45,7 +45,25 @@
                 {
                     "name": "Jump",
                     "type": "Button",
-                    "id": "7f8d3e22-a210-45e8-a364-ee50ff25de27",
+                    "id": "4bfed697-3848-47e9-8ecb-027df881db85",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Fire",
+                    "type": "Button",
+                    "id": "9115b19d-11ba-4ddd-8ee7-4b342c14ec5f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Reload",
+                    "type": "Button",
+                    "id": "b06f911e-f5cb-4591-8ad9-f7e45d910eed",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -154,6 +172,17 @@
                 },
                 {
                     "name": "",
+                    "id": "568cab9f-f78f-465f-81eb-90b497d25a15",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "61e9f3dd-6f42-4305-8578-791a54afc227",
                     "path": "<Keyboard>/leftCtrl",
                     "interactions": "",
@@ -165,12 +194,56 @@
                 },
                 {
                     "name": "",
-                    "id": "0abc383b-3089-4db2-a9d4-aea5a25d3a36",
+                    "id": "400d718e-7e09-4abb-a2e3-350f8c21accc",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "509e875d-f9fb-4edf-8783-4223966d12af",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "29741536-3c12-49c7-82d6-e84acb54982a",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8a577182-7b66-40a8-a565-61cfaa5ae692",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "62ffa77d-6ef3-4816-bd57-9cca25ab0267",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reload",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

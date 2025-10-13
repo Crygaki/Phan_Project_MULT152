@@ -21,6 +21,13 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // Example: deal damage if enemy has EnemyHealth
-        target?.Damage(damageAmount);
+        var enemy = other.GetComponent<EnemyHealth>();
+        if(enemy != null)
+        {
+            //enemy.TakeDamage(10f);
+            target?.Damage(damageAmount);
+        }
+
+        Destroy(gameObject);
     }
 }
